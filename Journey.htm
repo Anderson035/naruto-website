@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naruto's Journey</title>
+    <script src="modernizr-1.5.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Naruto's Journey Through the Years</h1>
+        <nav>
+            <ul>
+                <li><a href="Home.htm">Home</a></li>
+                <li><a href="Journey.htm">Journey</a></li>
+                <li><a href="Gallery.htm">Gallery</a></li>
+                <li><a href="Contact.htm">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Life Stages</h2>
+        <div class="accordion">
+            <button class="accordion-btn">Childhood</button>
+            <div class="panel">
+                <p>Naruto grew up as an orphan in the Hidden Leaf Village, striving to gain acknowledgment from others despite the Nine-Tails sealed within him.</p>
+                <p>Growing up as an orphan who suffered years of hatred and social 
+                isolation has influenced Naruto's character in a number of ways: 
+                he is heedless to formality and social standings, 
+                addressing certain people with nicknames instead of honourifics,
+                although by the time of his adulthood, Naruto has slightly outgrown this trait.
+             	He has picky eating habits of ramen, his favourite food; he has a perverted side 
+             	that manifests as attempts to peep into women's baths, although these moments are rare.
+             	Despite his quirks and the criticism they earn him to the point of being labelled the 
+             	ultimate problem child, Naruto is said to have a personality that draws people to him,
+             	inspiring friendship and loyalty through acts of genuine kindness that 
+             	could change a person's world view and thus built meaningful relationships 
+             	that he lacked in early life; the Sage of Six Paths believes Naruto's kindness
+             	is a special gift that allows him to save Kurama from its hatred.
+             	Naruto deeply cherishes these bonds and will go to great lengths to protect them, 
+             	best seen with Sasuke after his defection from Konoha.<p>
+            </div>
+            
+            <button class="accordion-btn">Academy Days</button>
+            <div class="panel">
+                <p>On the day of her enrolment in the Ninja Academy - Naruto first met Hinata Hyūga,
+                who was being picked on by three bullies. Despite not knowing her, 
+                Naruto immediately came to her defence, but he was outnumbered and knocked unconscious,
+                and the bullies damaged his red scarf. When Naruto awoke, Hinata thanked him for helping her 
+                and returned his scarf to him, but he let her keep it. 
+                He was unaware that the girl's growing affection for him began at that moment.<p>
+
+				<p>In the Academy, Naruto became a student of Iruka Umino, 
+				who acted as a surrogate older brother to keep him in line and help him work harder.
+				Naruto also met his classmate Sasuke Uchiha and tried to befriend him,
+				since Sasuke was alone as well. Jealous of Sasuke's skills and popularity,
+				however,[22] he developed a one-sided rivalry in his pursuit to prove himself
+				just as good as, if not better than, Sasuke, wishing that someday, 
+				Sasuke would accept him as an equal. Naruto also grew close with the owner 
+				of Ramen Ichiraku, Teuchi and his daughter Ayame, being welcomed as their 
+				favourite customer.<p>
+                <p>Naruto formed bonds with Iruka, Sasuke, and Sakura, and started his journey as a ninja under Team 7, led by Kakashi Hatake.</p>
+            </div>
+            
+            <button class="accordion-btn">Shippuden Era</button>
+            <div class="panel">
+                <p>"Naruto: Shippuden" is the sequel to the original "Naruto" anime and 
+                follows the story of Naruto Uzumaki, a young ninja who seeks recognition 
+                and dreams of becoming the Hokage, the leader of his village, Konohagakure.
+                Set two and a half years after the events of the original series, "Shippuden"
+            	focuses on Naruto's growth as a ninja and his quest to rescue 
+                his friend Sasuke Uchiha, who has left the village to gain power 
+                from the rogue ninja Orochimaru.<p>
+
+				<p>The series delves deeper into the characters' backstories, explores 
+				themes of friendship, perseverance, and redemption, and introduces new 
+				characters and powerful enemies, particularly the Akatsuki organization, 
+				which seeks to capture the Tailed Beasts, including Naruto's inner demon,
+				the Nine-Tails.<p>
+
+				<p>As the story progresses, Naruto and his friends face numerous challenges,
+				 including battles against formidable foes and the overarching threat of 
+				 the Fourth Great Ninja War. The series combines action, emotional storytelling,
+				 and character development, making it a beloved entry in the shonen anime genre.</p>
+            </div>
+            
+            <button class="accordion-btn">Becoming Hokage</button>
+            <div class="panel">
+                <p>After years of perseverance and battles, Naruto finally fulfilled his 
+                dream of becoming Hokage and established peace in the ninja world.</p>
+                
+                <p>Naruto's ambition to become the Hokage reflected his mysterious parentage,
+                as well as his desire for attention and approval from a village that hated him.
+                It might also speak to Sarutobi. and how he failed to truly help the boy.<p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Naruto Uzumaki Fan Page</p>
+    </footer>
+<script>
+    const accordions = document.querySelectorAll('.accordion-btn');
+
+    accordions.forEach(button => {
+        button.addEventListener('click', () => {
+            const panel = button.nextElementSibling;
+            const isActive = panel.style.display === 'block';
+
+            // Close all panels
+            document.querySelectorAll('.panel').forEach(p => p.style.display = 'none');
+
+            // Toggle the clicked panel
+            panel.style.display = isActive ? 'none' : 'block';
+        });
+    });
+</script>
+<script>
+document.querySelectorAll('.accordion-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        // Handle previously opened panel
+        document.querySelectorAll('.accordion-btn').forEach(btn => {
+            if (btn !== button && btn.classList.contains('active')) {
+                const otherPanel = btn.nextElementSibling;
+                btn.classList.remove('active');
+                otherPanel.style.opacity = '0'; // Start fade-out
+                setTimeout(() => {
+                    otherPanel.style.maxHeight = null; // Collapse
+                }, 500); // Wait for fade-out animation to complete
+            }
+        });
+
+        // Toggle the clicked panel
+        const panel = button.nextElementSibling;
+        const isActive = button.classList.contains('active');
+
+        button.classList.toggle('active', !isActive);
+
+        if (!isActive) {
+            panel.style.maxHeight = `${panel.scrollHeight}px`; /* Expand panel */
+            panel.style.opacity = '1'; /* Start fade-in */
+        } else {
+            panel.style.opacity = '0'; /* Start fade-out */
+            setTimeout(() => {
+                panel.style.maxHeight = null; /* Collapse */
+            }, 500); // Wait for fade-out animation to complete
+        }
+    });
+});
+
+</script>
+</body>
+</html>
