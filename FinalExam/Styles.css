@@ -1,0 +1,251 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Background */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(to bottom, #e9dc3f, #093c7d);
+    color: #333;
+    padding: 0 10px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    background-color: #fe7a35;
+    color: white;
+    padding: 20px 10px;
+    border-bottom: 4px solid #e65100;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Section Titles */
+h2 {
+    font-size: 2rem;
+    color: #e65100;
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* Sections */
+section {
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 1000px;
+    }
+    
+/* Accordion Styles */
+/* General Accordion Styles */
+.accordion {
+    max-width: 800px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.accordion-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #ff5722;
+    color: white;
+    text-align: left;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-btn:hover {
+    background-color: #e64a19;
+}
+
+/* Panel Style */
+.panel {
+    max-height: 0; /* Collapsed state */
+    overflow: hidden;
+    background-color: #fff3e0;
+    transition: max-height 0.5s ease, padding 0.5s ease; /* Smooth animation */
+    padding: 0 15px; /* Collapsed padding */
+    opacity: 0; /* Start fully transparent */
+    transition: opacity 0.5s ease, max-height 0.5s ease, padding 0.5s ease;
+}
+
+/* Expanded Panel */
+.accordion-btn.active + .panel {
+    max-height: 600px; /* Adjust based on content */
+    padding: 15px;
+    opacity: 1; /* Fully visible when expanded */
+}
+
+/* Gallery */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gallery figure {
+    max-width: 300px;
+    text-align: center;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.gallery figcaption {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Media */
+.media-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.media-gallery video, 
+.media-gallery audio {
+    width: 100%;
+    max-width: 400px;
+    border: 4px solid #ff9800;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Form */
+form {
+    margin: 20px 0;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input, 
+form select, 
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ff9800;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background: #ff5722;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #e65100;
+}
+
+/* Aside */
+aside {
+color: #000000;
+
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: #ff5722;
+    color: white;
+    padding: 10px 0;
+    margin-top: 20px;
+    border-top: 4px solid #e65100;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery, .media-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form button {
+        font-size: 1.1rem;
+    }
+}
+
+#hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh; 
+    text-align: center;
+    background-color: #f9f9f9; 
+    padding: 20px;
+}
+
+.centered-image {
+    max-width: 100%;
+    height: auto; 
+    margin-top: 20px;
+}
